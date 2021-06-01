@@ -12,7 +12,7 @@ th, td { border:1px solid gray; }
             <input type="text" name="nickname" onkeyup='printName()'/>
     	      <div id='result'></div>
     </body>  
-<button onclick="add_row('result')">추가</button>
+<button onclick="add_row(result)">추가</button>
 <button onclick="delete_row()">삭제</button>
 <hr>
   <style type="text/css">
@@ -51,7 +51,7 @@ th, td { border:1px solid gray; }
  
   
 <script>
-  function add_row(result) {
+  function add_row(a) {
     var my_tbody = document.getElementById('my-tbody');
     // var row = my_tbody.insertRow(0); // 상단에 추가
     var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
@@ -62,7 +62,7 @@ th, td { border:1px solid gray; }
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
-    cell1.innerHTML = result;
+    cell1.innerHTML = a.toString();
     cell2.innerHTML = new Date().toUTCString();
   }
 
