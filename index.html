@@ -4,15 +4,39 @@ table { border-collapse:collapse; }
 th, td { border:1px solid gray; }
 </style>
 
-<button onclick="add_row()">행 추가하기</button>
-<button onclick="delete_row()">행 삭제하기</button>
+<button onclick="add_row()">추가</button>
+<button onclick="delete_row()">삭제</button>
 <hr>
-<table>
-  <thead>
-    <th>item</th>
-    <th>datetime</th>
-  </thead>
-  <tbody id="my-tbody"></tbody>
+  <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-plfj{background-color:#dae8fc;border-color:#9b9b9b;color:#333333;text-align:left;vertical-align:top}
+.tg .tg-2fdn{border-color:#9b9b9b;text-align:left;vertical-align:top}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 240px">
+<colgroup>
+<col style="width: 90px">
+<col style="width: 25px">
+<col style="width: 25px">
+<col style="width: 25px">
+<col style="width: 25px">
+<col style="width: 25px">
+<col style="width: 25px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-plfj">item</th>
+    <th class="tg-2fdn">datetime</th>
+    <th class="tg-2fdn"></th>
+    <th class="tg-2fdn"></th>
+    <th class="tg-2fdn"></th>
+    <th class="tg-2fdn"></th>
+    <th class="tg-2fdn"></th>
+  </tr>
+</thead>
 </table>
 
 <script>
