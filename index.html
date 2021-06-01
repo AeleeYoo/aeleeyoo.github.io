@@ -4,6 +4,18 @@ table { border-collapse:collapse; }
 th, td { border:1px solid gray; }
 </style>
 
+  
+<head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+</head>
+  <body>
+        <form action="url" method="GET">
+            닉네임 :
+            <input type="text" name="nickname" />
+            <br />
+            <input type="submit" />
+        </form>
+    </body>  
 <button onclick="add_row()">추가</button>
 <button onclick="delete_row()">삭제</button>
 <hr>
@@ -40,6 +52,8 @@ th, td { border:1px solid gray; }
 <tbody id="my-tbody"></tbody>
 </table>
 
+ 
+  
 <script>
   function add_row() {
     var my_tbody = document.getElementById('my-tbody');
