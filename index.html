@@ -7,12 +7,13 @@ th, td { border:1px solid gray; }
 <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 </head>
-  <body>
+<body>
             닉네임 :
             <input type="text" name="nickname" onkeyup='printName()'/>
+    <div id='result'></div>
     <button onclick="add_row(document.getElementById('result'))">추가</button>
     <button onclick="delete_row()">삭제</button>
- </body>  
+  
 
 <hr>
   <style type="text/css">
@@ -47,6 +48,7 @@ th, td { border:1px solid gray; }
 </thead>
 <tbody id="my-tbody"></tbody>
 </table>
+</body> 
 
  
   
