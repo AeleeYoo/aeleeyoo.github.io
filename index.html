@@ -6,7 +6,7 @@
             닉네임 :
             <input type="text" name = "id"/>
   
-    <button onclick="add_row(document.getElementById())">추가</button>
+    <button onclick="add_row()">추가</button>
     <button onclick="delete_row()">삭제</button>
 </br>
     
@@ -47,7 +47,7 @@
 </body> 
 
 <script>
-  function add_row(a) {
+  function add_row() {
     var my_tbody = document.getElementById('my-tbody');
     // var row = my_tbody.insertRow(0); // 상단에 추가
     var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
