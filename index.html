@@ -59,9 +59,9 @@
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     nickname = document.getElementById('name').value;
-    cell1.innerHTML = nickname;
+    cell1.innerHTML = <button onclick="printName()">nickname</button>;
   }
-
+  
   function delete_row() {
     var my_tbody = document.getElementById('my-tbody');
     if (my_tbody.rows.length < 1) return;
