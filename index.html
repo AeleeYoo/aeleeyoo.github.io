@@ -4,7 +4,7 @@
 </head>
 <body>
             닉네임 :
-            <input type="text" name = "id"/>
+            <input type="text" id = "name"/>
   
     <button onclick="add_row()">추가</button>
     <button onclick="delete_row()">삭제</button>
@@ -47,6 +47,7 @@
 </body> 
 
 <script>
+  var nickname;
   function add_row() {
     var my_tbody = document.getElementById('my-tbody');
     // var row = my_tbody.insertRow(0); // 상단에 추가
@@ -58,7 +59,8 @@
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
-    cell1.innerHTML = document.getElementById('id').value;
+    nickname = document.getElementById('name').value;
+    cell1.innerHTML = nickname;
     cell2.innerHTML = new Date().toUTCString();
   }
 
