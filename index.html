@@ -4,10 +4,12 @@
 </head>
 <body>
             닉네임 :
-            <input type="text" id='name' onkeyup='printName()'/>
-    <div id='result'></div>
-    <button onclick="add_row(document.getElementById('result'))">추가</button>
+            <input type="text" name = "id"/>
+  
+    <input button onclick="add_row(document.getElementById())">추가</button>
     <button onclick="delete_row()">삭제</button>
+</br>
+    
   
 
 <hr>
@@ -56,7 +58,7 @@
     var cell5 = row.insertCell(4);
     var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
-    cell1.innerHTML = document.getElementById('a').value;
+    cell1.innerHTML = document.getElementById('id').value;
     cell2.innerHTML = new Date().toUTCString();
   }
 
