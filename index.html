@@ -18,19 +18,10 @@
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:20px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-plfj{background-color:#dae8fc;border-color:#9b9b9b;color:#333333;text-align:center;vertical-align:top}
-.tg .tg-2fdn{border-color:#9b9b9b;text-align:center;vertical-align:top}
+.tg .tg-plfj{background-color:#dae8fc;border-color:#9b9b9b;color:#333333;text-align:left;vertical-align:top}
+.tg .tg-2fdn{border-color:#9b9b9b;text-align:left;vertical-align:top}
 </style>
 <table class="tg" style="undefined;table-layout: fixed; width: 100%" id="my-tbody">
-<colgroup>
-<col style="width: 90px">
-<col style="width: 25px">
-<col style="width: 25px">
-<col style="width: 25px">
-<col style="width: 25px">
-<col style="width: 25px">
-<col style="width: 25px">
-</colgroup>
 <thead>
   <tr>
     <th class="tg-plfj">닉네임</th>
@@ -44,24 +35,21 @@
 </thead>
 </table>
 <br>
-<button onclick="add_row()">제출</button>
+<button onclick="submit()">제출</button>
+
+<button onclick="reset()">초기화</button>
 </br>
 
 
 <script>
   var nickname;
+  var today = 0;
+  
   function add_row() {
     var my_tbody = document.getElementById('my-tbody');
-    // var row = my_tbody.insertRow(0); // 상단에 추가
+
     var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
-	let fruits = [row.insertCell(0), row.insertCell(1), row.insertCell(2), row.insertCell(3), row.insertCell(4), row.insertCell(5), row.insertCell(6)];
-    //var cell1 = row.insertCell(0);
-    //var cell2 = row.insertCell(1);
-    //var cell3 = row.insertCell(2);
-    //var cell4 = row.insertCell(3);
-    //var cell5 = row.insertCell(4);
-   // var cell6 = row.insertCell(5);
-    //var cell7 = row.insertCell(6);
+	let cells = [row.insertCell(0), row.insertCell(1), row.insertCell(2), row.insertCell(3), row.insertCell(4), row.insertCell(5), row.insertCell(6)];
     nickname = document.getElementById('name').value;
 	
 	var b = document.createElement('button');
@@ -69,26 +57,29 @@
 	b.setAttribute('class', 'btn');
 	b.innerHTML = nickname;
 	b.onclick = function(){
-		fruits[3].innerHTML = '뾰로롱';
+		cells[today].innerHTML = '뾰로롱';
 	};
 	
-	fruits[0].appendChild(b);
-	//document.getElementById('btn1').innerText = nickname;
-    //cell1.innerHTML = '<input id="Button" type="button" value=nickname />';
+	cells[0].appendChild(b);
+
   }
   
   function delete_row() {
     var my_tbody = document.getElementById('my-tbody');
     if (my_tbody.rows.length < 1) return;
-    // my_tbody.deleteRow(0); // 상단부터 삭제
+	
     my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
   }
   
-  function printName() {
-    const name = document.getElementById('name').value;
-    document.getElementById("result").innerText = name;
+  function submit() {
+    var day = new Date().getDay();
+	if (day > 3) today = day - 3;
+	else if (day < 3) today = day + 4;
+  }
+  
+  function reset() {
   }
 
 </script>
-  </body> 
+</body> 
 </html>
