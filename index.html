@@ -5,7 +5,6 @@
 <body>
             닉네임 :
             <input type="text" id = "name"/>
-  
     <button onclick="add_row()">추가</button>
     <button onclick="delete_row()">삭제</button>
 </br>
@@ -22,7 +21,7 @@
 .tg .tg-plfj{background-color:#dae8fc;border-color:#9b9b9b;color:#333333;text-align:left;vertical-align:top}
 .tg .tg-2fdn{border-color:#9b9b9b;text-align:left;vertical-align:top}
 </style>
-<table class="tg" style="undefined;table-layout: fixed; width: 240px" id="my-tbody">
+<table class="tg" style="undefined;table-layout: fixed; width: 100%" id="my-tbody">
 <colgroup>
 <col style="width: 90px">
 <col style="width: 25px">
@@ -34,13 +33,13 @@
 </colgroup>
 <thead>
   <tr>
-    <th class="tg-plfj">item</th>
-    <th class="tg-2fdn">datetime</th>
-    <th class="tg-2fdn"></th>
-    <th class="tg-2fdn"></th>
-    <th class="tg-2fdn"></th>
-    <th class="tg-2fdn"></th>
-    <th class="tg-2fdn"></th>
+    <th class="tg-plfj">닉네임</th>
+    <th class="tg-2fdn">목</th>
+    <th class="tg-2fdn">금</th>
+    <th class="tg-2fdn">토</th>
+    <th class="tg-2fdn">일</th>
+    <th class="tg-2fdn">월</th>
+    <th class="tg-2fdn">화</th>
   </tr>
 </thead>
 </table>
@@ -61,7 +60,6 @@
     var cell7 = row.insertCell(6);
     nickname = document.getElementById('name').value;
     cell1.innerHTML = nickname;
-    cell2.innerHTML = new Date().toUTCString();
   }
 
   function delete_row() {
