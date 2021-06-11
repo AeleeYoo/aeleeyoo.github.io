@@ -9,7 +9,7 @@
     <button onclick="delete_row()">삭제</button>
 </br>
     
-  
+
 
 <hr>
   <style type="text/css">
@@ -20,6 +20,9 @@
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg .tg-plfj{background-color:#dae8fc;border-color:#9b9b9b;color:#333333;text-align:left;vertical-align:top}
 .tg .tg-2fdn{border-color:#9b9b9b;text-align:left;vertical-align:top}
+table td#red {background-color:red;}
+table td#yellow {background-color:yellow;}
+table td#green {background-color:green;}
 </style>
 <table class="tg" style="undefined;table-layout: fixed; width: 100%" id="my-tbody">
 <thead>
@@ -44,20 +47,38 @@
 <script>
   var nickname;
   var today = 0;
+  var mJsonArray = new Array();
+  var index = 0;
   
   function add_row() {
     var my_tbody = document.getElementById('my-tbody');
-
+	
     var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
 	let cells = [row.insertCell(0), row.insertCell(1), row.insertCell(2), row.insertCell(3), row.insertCell(4), row.insertCell(5), row.insertCell(6)];
     nickname = document.getElementById('name').value;
+	index = index + 1;
+	
+	var mJson = new Object();
+	mJson.name = nickname;
+	mJson.count = 0;
+	mJson.index = index;
+	mJsonArray.push(mJson);
 	
 	var b = document.createElement('button');
 	b.setAttribute('content', 'test content');
 	b.setAttribute('class', 'btn');
 	b.innerHTML = nickname;
 	b.onclick = function(){
-		cells[today].innerHTML = <td bgcolor="#D9E5FF"></td>;
+		tmpCount = updateArray(mJsonArray, nickname);
+		
+		if(tmpCount % 3 == 1) {
+			cells[today].bgColor = "#419474";
+		} else if (tmpCount % 3 == 2){
+			cells[today].bgColor = "ffd700";
+		} else if (tmpCount % 3 == 0){
+			cells[today].bgColor = "ff6347";
+		}
+		cells[today].innerHTML = tmpCount;
 	};
 	
 	cells[0].appendChild(b);
@@ -67,6 +88,7 @@
   function delete_row() {
     var my_tbody = document.getElementById('my-tbody');
     if (my_tbody.rows.length < 1) return;
+	nickname = document.getElementById('name').value;
 	
     my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
   }
@@ -79,7 +101,19 @@
   
   function reset() {
   }
-
+  
+  function updateArray(myArray, nickname){
+	var count = 0;
+	for (var i = 0; i < myArray.length; i++) {
+	
+		if (myArray[i].name === nickname) {
+			myArray[i].count = myArray[i].count + 1;
+			count = myArray[i].count;
+			break;
+			}
+		}
+	return count;
+	}
 </script>
 </body> 
 </html>
